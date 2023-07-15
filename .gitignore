@@ -1,0 +1,5 @@
+# Ignore files created when compiling / patching suckless software
+*.orig
+*.rej
+*.o
+dwm
