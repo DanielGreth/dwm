@@ -1793,7 +1793,6 @@ setup(void)
 	scheme = ecalloc(LENGTH(colors), sizeof(Clr *));
 	for (i = 0; i < LENGTH(colors); i++)
 		scheme[i] = drw_scm_create(drw, colors[i], 3);
-   drw_clr_create(drw, &clrborder, col_borderbar);
 	/* init bars */
 	updatebars();
 	updatestatus();
