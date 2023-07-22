@@ -10,20 +10,37 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int vertpad            = 7;       /* vertical padding of bar */
-static const int sidepad            = 7;       /* horizontal padding of bar */
+static const int vertpad            = 7;        /* vertical padding of bar */
+static const int sidepad            = 7;        /* horizontal padding of bar */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
-static char normbgcolor[]           = "#222222";
-static char normbordercolor[]       = "#444444";
-static char normfgcolor[]           = "#bbbbbb";
-static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#005577";
-static char selbgcolor[]            = "#005577";
+static char normfgcolor[]           = "#a89984"; //                                (C7) (Not used anymore, replaced by other norm fg)
+static char normbgcolor[]           = "#32302f"; //                                (C0) (Not used anymore, replaced by other norm bg)
+static char selfgcolor[]            = "#ebdbb2"; //                                (FG) (Not used anymore, replaced by other sel fg)
+static char selbgcolor[]            = "#282828"; //                                (BG) (Not used anymore, replaced by other sel bg)
+static char normbordercolor[]       = "#32302f"; // Unfocused window border        (C0)
+static char selbordercolor[]        = "#cc241d"; // Selected window border         (C1)
+static char statusfg[]              = "#cc241d"; // Status bar text                (C1)
+static char statusbg[]              = "#282828"; // Status bar background          (BG)
+static char tagnormfg[]             = "#928374"; // Normal tag text                (C8)
+static char tagnormbg[]             = "#282828"; // Normal tag bagground           (BG)
+static char tagselfg[]              = "#cc241d"; // Selected tag text              (C1)
+static char tagselbg[]              = "#32302f"; // Selected tag background        (C0)
+static char infonormfg[]            = "#ebdbb2"; // Normal middle bar text         (FG) (NEVER USED)
+static char infonormbg[]            = "#282828"; // Normal middle bar background   (BG)
+static char infoselfg[]             = "#282828"; // Selected middle bar text       (BG)
+static char infoselbg[]             = "#cc241d"; // Selected middle bar background (C1)
+static char borderbar[]             = "#32302f"; // Border around the entire bar   (C0)
+
 static char *colors[][3] = {
-       /*               fg           bg           border   */
-       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+       /*                        fg           bg           border   */
+       [SchemeNorm]      = { normfgcolor, normbgcolor, normbordercolor },
+       [SchemeSel]       = { selfgcolor,  selbgcolor,  selbordercolor  },
+       [SchemeStatus]    = { statusfg,    statusbg,    borderbar       }, // Statusbar right {text,background,not used but cannot be empty}
+       [SchemeTagsNorm]  = { tagnormfg,   tagnormbg,   borderbar       }, // Tagbar left unselected {text,background,not used but cannot be empty}
+       [SchemeTagsSel]   = { tagselfg,    tagselbg,    borderbar       }, // Tagbar left selected {text,background,not used but cannot be empty}
+       [SchemeInfoNorm]  = { infonormfg,  infonormbg,  borderbar       }, // infobar middle  unselected {text,background,not used but cannot be empty}
+       [SchemeInfoSel]   = { infoselfg,   infoselbg,   borderbar       }, // infobar middle  selected {text,background,not used but cannot be empty}
 };
 
 /* tagging */
@@ -142,4 +159,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
