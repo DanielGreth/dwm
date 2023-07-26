@@ -133,8 +133,11 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
-   { 0,                       XF86XK_MonBrightnessDown,    spawn,          SHCMD("br dec 2") },
-   { 0,                       XF86XK_MonBrightnessUp,    spawn,          SHCMD("br inc 2") },
+   { 0,            XF86XK_MonBrightnessDown,  spawn,          SHCMD("br dec 2") },
+   { 0,            XF86XK_MonBrightnessUp,    spawn,          SHCMD("br inc 2") },
+   { 0,            XF86XK_AudioLowerVolume,   spawn,          SHCMD("vl dec 0.01") },
+   { 0,            XF86XK_AudioRaiseVolume,   spawn,          SHCMD("vl inc 0.01") },
+   { 0,            XF86XK_AudioMute,          spawn,          SHCMD("vl toggle_mute") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
