@@ -20,7 +20,7 @@ static char selfgcolor[]            = "#ebdbb2"; //                             
 static char selbgcolor[]            = "#282828"; //                                (BG) (Not used anymore, replaced by other sel bg)
 static char normbordercolor[]       = "#32302f"; // Unfocused window border        (C0)
 static char selbordercolor[]        = "#cc241d"; // Selected window border         (C1)
-static char statusfg[]              = "#cc241d"; // Status bar text                (C1)
+static char statusfg[]              = "#928374"; // Status bar text                (C1)
 static char statusbg[]              = "#282828"; // Status bar background          (BG)
 static char tagnormfg[]             = "#928374"; // Normal tag text                (C8)
 static char tagnormbg[]             = "#282828"; // Normal tag bagground           (BG)
@@ -31,6 +31,41 @@ static char infonormbg[]            = "#282828"; // Normal middle bar background
 static char infoselfg[]             = "#282828"; // Selected middle bar text       (BG)
 static char infoselbg[]             = "#cc241d"; // Selected middle bar background (C1)
 static char borderbar[]             = "#32302f"; // Border around the entire bar   (C0)
+
+static char termcol0[] = "#000000"; /* black   */
+static char termcol1[] = "#ff0000"; /* red     */
+static char termcol2[] = "#33ff00"; /* green   */
+static char termcol3[] = "#ff0099"; /* yellow  */
+static char termcol4[] = "#0066ff"; /* blue    */
+static char termcol5[] = "#cc00ff"; /* magenta */
+static char termcol6[] = "#00ffff"; /* cyan    */
+static char termcol7[] = "#d0d0d0"; /* white   */
+static char termcol8[]  = "#808080"; /* black   */
+static char termcol9[]  = "#ff0000"; /* red     */
+static char termcol10[] = "#33ff00"; /* green   */
+static char termcol11[] = "#ff0099"; /* yellow  */
+static char termcol12[] = "#0066ff"; /* blue    */
+static char termcol13[] = "#cc00ff"; /* magenta */
+static char termcol14[] = "#00ffff"; /* cyan    */
+static char termcol15[] = "#ffffff"; /* white   */
+static char *termcolor[] = {
+  termcol0,
+  termcol1,
+  termcol2,
+  termcol3,
+  termcol4,
+  termcol5,
+  termcol6,
+  termcol7,
+  termcol8,
+  termcol9,
+  termcol10,
+  termcol11,
+  termcol12,
+  termcol13,
+  termcol14,
+  termcol15,
+};
 
 static char *colors[][3] = {
        /*                        fg           bg           border   */
