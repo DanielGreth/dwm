@@ -12,8 +12,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 7;        /* vertical padding of bar */
 static const int sidepad            = 7;        /* horizontal padding of bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "Hack Nerd Font:pixelsize=12:antialias=true:autohint=true" };
+static const char dmenufont[]       = "Hack Nerd Font:pixelsize=12:antialias=true:autohint=true";
 static char normfgcolor[]           = "#a89984"; //                                (C7) (Not used anymore, replaced by other norm fg)
 static char normbgcolor[]           = "#32302f"; //                                (C0) (Not used anymore, replaced by other norm bg)
 static char selfgcolor[]            = "#ebdbb2"; //                                (FG) (Not used anymore, replaced by other sel fg)
