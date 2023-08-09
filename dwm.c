@@ -841,7 +841,7 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 
 			text[i] = '\0';
 			w = TEXTW(text) - lrpad;
-			drw_text(drw, x-borderpx, 0+borderpx, w+borderpx, bh, 0, text, 0);
+			drw_text(drw, x, 0 + borderpx, w, bh, 0, text, 0);
 
 			x += w;
 
@@ -891,7 +891,7 @@ drawstatusbar(Monitor *m, int bh, char* stext) {
 
 	if (!isCode) {
 		w = TEXTW(text) - lrpad;
-		drw_text(drw, x-borderpx, 0+borderpx, w+borderpx, bh, 0, text, 0);
+		drw_text(drw, x, 0 + borderpx, w, bh, 0, text, 0);
 	}
 
 	drw_setscheme(drw, scheme[SchemeNorm]);
@@ -905,7 +905,6 @@ drawbar(Monitor *m)
 {
 	int x, y = borderpx,  w, tw = 0;
    int th = bh - borderpx * 2;
-   int mw = m->ww - borderpx * 2;
 	int boxs = drw->fonts->h / 9;
 	int boxw = drw->fonts->h / 6 + 2;
 	unsigned int i, occ = 0, urg = 0;
@@ -919,9 +918,6 @@ drawbar(Monitor *m)
 
 	/* draw status first so it can be overdrawn by tags later */
 	if (m == selmon) { /* status is only drawn on selected monitor */
-//		drw_setscheme(drw, scheme[SchemeStatus]);
-//		tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
-//		drw_text(drw, mw - tw - 2 * sp, y, tw + borderpx, th, 0, stext, 0);
       tw = statusw = m->ww - drawstatusbar(m, th, stext);
 	}
 
@@ -943,17 +939,17 @@ drawbar(Monitor *m)
 	}
 	w = TEXTW(m->ltsymbol);
 	drw_setscheme(drw, scheme[SchemeTagsNorm]);
-	x = drw_text(drw, x, y, w + (borderpx * 4), th, lrpad / 2, m->ltsymbol, 0);
+	x = drw_text(drw, x, y, w, th, lrpad / 2, m->ltsymbol, 0);
 
 	if ((w = m->ww - tw - x) > th) {
 		if (m->sel) {
 			drw_setscheme(drw, scheme[m == selmon ? SchemeInfoSel : SchemeInfoNorm]);
-			drw_text(drw, x, y, w + (borderpx * 4), th, lrpad / 2, m->sel->name, 0);
+			drw_text(drw, x, y, w + (8), th, lrpad / 2, m->sel->name, 0); //Confused why excatly 8 is needed for not having a gap between info and status
 			if (m->sel->isfloating)
 				drw_rect(drw, x + boxs, y + boxs, boxw, boxw, m->sel->isfixed, 0);
 		} else {
 			drw_setscheme(drw, scheme[SchemeInfoNorm]);
-			drw_rect(drw, x, y, w + (borderpx * 4), th, 1, 1);
+			drw_rect(drw, x, y, w + (8), th, 1, 1); //Confused why exactly 8 is needed
 		}
 	}
 	drw_map(drw, m->barwin, 0, 0, m->ww, bh);
