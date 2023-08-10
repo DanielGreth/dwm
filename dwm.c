@@ -1299,6 +1299,8 @@ loadxrdb()
         XRDB_LOAD_COLOR("color13", termcol13);
         XRDB_LOAD_COLOR("color14", termcol14);
         XRDB_LOAD_COLOR("color15", termcol15);
+        XRDB_LOAD_COLOR("background", termcol16);
+        XRDB_LOAD_COLOR("foreground", termcol17);
       }
     }
   }

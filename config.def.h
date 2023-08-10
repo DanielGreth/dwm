@@ -48,6 +48,8 @@ static char termcol12[] = "#0066ff"; /* blue    */
 static char termcol13[] = "#cc00ff"; /* magenta */
 static char termcol14[] = "#00ffff"; /* cyan    */
 static char termcol15[] = "#ffffff"; /* white   */
+static char termcol16[]= "#282828"; /* background, is set to 16 because it needs to be a number */
+static char termcol17[]= "#ebdbb2"; /* foreground, is set to 17 because it needs to be a number */
 static char *termcolor[] = {
   termcol0,
   termcol1,
@@ -65,6 +67,8 @@ static char *termcolor[] = {
   termcol13,
   termcol14,
   termcol15,
+  termcol16,
+  termcol17,
 };
 
 static char *colors[][3] = {
